@@ -1,0 +1,20 @@
+module.exports = {
+  name: 'default',
+  type: 'postgres',
+  host: process.env.POSTGRES_HOST,
+  port: +process.env.POSTGRES_PORT,
+  username: process.env.POSTGRES_USERNAME,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DATABASE,
+  entities: ['dist/**/*.entity.js'],
+  synchronize: false,
+  ssl: false,
+  migrations: ['dist/shared/migrations/*.js'],
+  migrationsRun: false,
+  migrationsTableName: 'migrations',
+  cli: {
+    migrationsDir: 'src/shared/migrations',
+  },
+  logging: true,
+  logger: 'file',
+};
