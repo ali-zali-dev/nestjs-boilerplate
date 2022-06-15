@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 import { ChatModule } from './chat/chat.module';
 import { ChatroomModule } from './chatroom/chatroom.module';
 import { ChatSocketModule } from './chat-socket/chat-socket.module';
+import { UserModule } from './user/user.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { ChatSocketModule } from './chat-socket/chat-socket.module';
     ChatModule,
     ChatroomModule,
     ChatSocketModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],
