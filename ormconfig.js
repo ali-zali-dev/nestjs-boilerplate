@@ -7,7 +7,7 @@ module.exports = {
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DATABASE,
   entities: ['dist/**/*.entity.js'],
-  synchronize: false,
+  synchronize: true,
   ssl: false,
   migrations: ['dist/shared/migrations/*.js'],
   migrationsRun: false,
