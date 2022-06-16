@@ -10,10 +10,13 @@ import { ChatModule } from './chat/chat.module';
 import { ChatroomModule } from './chatroom/chatroom.module';
 import { ChatSocketModule } from './chat-socket/chat-socket.module';
 import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot(),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
     TypeOrmModule.forRoot(),
     MongooseModule.forRoot(
       `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DATABASE}`,
@@ -23,6 +26,7 @@ import { UserModule } from './user/user.module';
     ChatroomModule,
     ChatSocketModule,
     UserModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
