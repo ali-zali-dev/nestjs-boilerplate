@@ -21,5 +21,6 @@ adminjs.registerAdapter({ Database, Resource });
   ],
   controllers: [UserController],
   providers: [UserService],
+  exports: [UserService],
 })
 export class UserModule {}
