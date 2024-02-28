@@ -8,7 +8,7 @@ export class StripeService {
   private stripe = new Stripe(
     'sk_test_51KEX6IDrna6aO11d6LpXf2RS8p6bpW1IbLzdQTEkg7EXbCG1AFXt9iuYa0laoDl6r6KLyEoM2ixGx9DsJIGBgIiR00CgDsHVGQ',
     {
-      apiVersion: '2020-08-27',
+      apiVersion: '2022-11-15',
     },
   );
 

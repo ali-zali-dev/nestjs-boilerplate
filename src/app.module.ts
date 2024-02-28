@@ -14,10 +14,17 @@ import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({
-      isGlobal: true,
+    ConfigModule.forRoot(),
+    TypeOrmModule.forRoot({
+      type: 'postgres',
+      host: 'localhost',
+      port: +process.env.POSTGRES_PORT,
+      username: process.env.POSTGRES_USERNAME,
+      password: process.env.POSTGRES_PASSWORD,
+      database: process.env.POSTGRES_DATABASE,
+      entities: ['dist/**/*.entity.js'],
+      synchronize: true,
     }),
-    TypeOrmModule.forRoot(),
     MongooseModule.forRoot(
       `mongodb://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@${process.env.MONGODB_HOST}:${process.env.MONGODB_PORT}/${process.env.MONGODB_DATABASE}`,
     ),
