@@ -11,7 +11,9 @@ export class UserService extends TypeOrmCrudService<User> {
 
   async getOneByEmail(email: string) {
     return this.repo.findOne({
-      email,
+      where: {
+        email,
+      },
     });
   }
 
