@@ -1,16 +1,17 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { User } from './entities/user.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
-export class UserService extends TypeOrmCrudService<User> {
-  constructor(@InjectRepository(User) repo) {
-    super(repo);
-  }
+export class UserService {
+  constructor(
+    @InjectRepository(User)
+    private userRepository: Repository<User>,
+  ) {}
 
   async getOneByEmail(email: string) {
-    return this.repo.findOne({
+    return this.userRepository.findOne({
       where: {
         email,
       },
@@ -18,7 +19,7 @@ export class UserService extends TypeOrmCrudService<User> {
   }
 
   async createOneByEmail(email: string, password: string) {
-    return this.repo.save({
+    return this.userRepository.save({
       email,
       password,
     });

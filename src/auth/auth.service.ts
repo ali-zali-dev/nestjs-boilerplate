@@ -1,14 +1,10 @@
 import { BadRequestException, Injectable } from '@nestjs/common';
-import { CreateAuthDto } from './dto/create-auth.dto';
-import { UpdateAuthDto } from './dto/update-auth.dto';
 import { compare } from 'bcrypt';
 import { User } from '../user/entities/user.entity';
 import { JwtService } from '@nestjs/jwt';
 import { Login } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
 import { UserService } from '../user/user.service';
-import { CrudRequest } from '@nestjsx/crud';
-import reqCrud, { CrudRequestDto } from '../shared/dto/req-crud.dto';
 @Injectable()
 export class AuthService {
   constructor(
