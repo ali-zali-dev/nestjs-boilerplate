@@ -17,6 +17,10 @@ export class PermissionGuard implements CanActivate {
     if (!requestPermissions) return true;
     const request = context.switchToHttp().getRequest();
     const userFound = await this.userService.findOne(request.user.id);
+    if (!userFound) {
+      return false;
+    }
+
     if (userFound.email === 'superadmin@tarahaniranian.com') return true;
     const permissions: Set<string> = new Set();
     for (const role of userFound.roles) {

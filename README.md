@@ -38,5 +38,7 @@ $ npm run start:prod
 - Add user module (done)
 - Add chat module (done)
 - Add stripe module (done)
+- Add Husky
+- Add stripe
 - Add logger
 - Add docker

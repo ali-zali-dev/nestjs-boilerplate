@@ -21,11 +21,11 @@ export class ResponseDTO {
 
   @IsNotEmpty()
   @IsString()
-  message: string;
+  message?: string;
 
   @IsNotEmpty()
   @IsNumber()
-  status: number;
+  status?: number;
 
   @IsNotEmpty()
   meta: any;

@@ -10,6 +10,12 @@ export class UserService {
     private userRepository: Repository<User>,
   ) {}
 
+  async findOne(id: number) {
+    return this.userRepository.findOneBy({
+      id,
+    });
+  }
+
   async getOneByEmail(email: string) {
     return this.userRepository.findOne({
       where: {

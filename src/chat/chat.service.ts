@@ -14,15 +14,7 @@ export class ChatService {
   ) {}
 
   async create(createChatDto: CreateChatDto) {
-    const foundedChatroom = await this.chatroomService.findOne(
-      createChatDto.chatroomId,
-    );
-    const createdChat = new this.chatModel(createChatDto);
-    createdChat.chatroom = foundedChatroom.id;
-    foundedChatroom.chats.push(createdChat._id);
-    await foundedChatroom.save();
-
-    return createdChat.save();
+    return `This action creates a new chat`;
   }
 
   findAll() {
