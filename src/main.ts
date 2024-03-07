@@ -25,7 +25,10 @@ async function bootstrap() {
   }
 
   await app
-    .listen(process.env.SERVICE_PORT, process.env.SERVICE_HOST)
+    .listen(
+      process.env.SERVICE_PORT as string,
+      process.env.SERVICE_HOST as string,
+    )
     .then(() => {
       console.info(
         `Server is running on ${process.env.SERVICE_HOST}:${process.env.SERVICE_PORT}`,

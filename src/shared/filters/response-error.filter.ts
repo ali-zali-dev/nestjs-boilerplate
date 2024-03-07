@@ -16,7 +16,7 @@ export class ResponseErrorFilter implements ExceptionFilter {
       ? exception.getStatus()
       : HttpStatus.INTERNAL_SERVER_ERROR;
 
-    let message: string;
+    let message = 'Internal server error';
     console.error(exception);
 
     if (exception) {
@@ -33,8 +33,6 @@ export class ResponseErrorFilter implements ExceptionFilter {
       } else {
         console.error(exception);
       }
-    } else {
-      message = 'Internal server error';
     }
     response.status(status).json(
       ResponseDTO.error({

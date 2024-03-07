@@ -19,7 +19,7 @@ import { ProductModule } from './product/product.module';
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: 'localhost',
-      port: +process.env.POSTGRES_PORT,
+      port: +(process.env.POSTGRES_PORT as string),
       username: process.env.POSTGRES_USERNAME,
       password: process.env.POSTGRES_PASSWORD,
       database: process.env.POSTGRES_DATABASE,
