@@ -42,3 +42,9 @@ $ npm run start:prod
 - Add stripe
 - Add logger
 - Add docker
+- Add rate-limit and user-attempt
+- Add test
+- Add response interceptor
+- Add parent entity
+- Add adminJS
+- Add task schedule
