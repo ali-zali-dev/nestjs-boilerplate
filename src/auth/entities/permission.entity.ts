@@ -5,7 +5,7 @@ import {
   ManyToMany,
   PrimaryGeneratedColumn,
 } from 'typeorm';
-import { CommonEntity } from '../../shared/entities/common.entity';
+import { CommonEntity } from '../../common/entities/common.entity';
 
 import { Role } from './role.entity';
 

@@ -1,5 +1,4 @@
 import {
-  BaseEntity,
   BeforeInsert,
   BeforeUpdate,
   Column,
@@ -10,10 +9,11 @@ import {
 } from 'typeorm';
 import { Role } from '../../auth/entities/role.entity';
 import { hash } from 'bcrypt';
+import { CommonEntity } from '../../common/entities/common.entity';
 @Entity()
-export class User extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+export class User extends CommonEntity {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
 
   @Column({ nullable: true })
   name: string;
@@ -34,7 +34,7 @@ export class User extends BaseEntity {
   @BeforeInsert()
   @BeforeUpdate()
   async before() {
-    if (this.password && this.password.length < 40) {
+    if (this.password) {
       this.password = await hash(this.password, 10);
     }
     if (this.email) {
