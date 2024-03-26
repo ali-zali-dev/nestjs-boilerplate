@@ -38,13 +38,13 @@ $ npm run start:prod
 - Add user module (done)
 - Add chat module (done)
 - Add stripe module (done)
+- Add common entity (done)
+- Add rate-limit and user-attempt
+- Add response interceptor
 - Add Husky
-- Add stripe
 - Add logger
 - Add docker
-- Add rate-limit and user-attempt
-- Add test
-- Add response interceptor
-- Add parent entity
 - Add adminJS
+- Add test
 - Add task schedule
+- Add stripe

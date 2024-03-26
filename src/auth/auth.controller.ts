@@ -9,8 +9,8 @@ import {
   UseGuards,
 } from '@nestjs/common';
 import { ApiOperation, ApiBearerAuth } from '@nestjs/swagger';
-import { UserDec } from '../shared/decorators/user.decorator';
-import { ResponseDTO } from '../shared/dto/response.dto';
+import { UserDec } from '../common/decorators/user.decorator';
+import { ResponseDTO } from '../common/dto/response.dto';
 import { User } from '../user/entities/user.entity';
 import { AuthService } from './auth.service';
 import { LoginAuthDec } from './decorators/login-auth.dec';

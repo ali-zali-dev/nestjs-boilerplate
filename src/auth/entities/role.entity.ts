@@ -1,5 +1,5 @@
 import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { CommonEntity } from '../../shared/entities/common.entity';
+import { CommonEntity } from '../../common/entities/common.entity';
 import { User } from '../../user/entities/user.entity';
 
 import { Permission } from './permission.entity';
